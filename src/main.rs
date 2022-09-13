@@ -24,9 +24,10 @@ fn two_sum(nums: Vec<i32>, target:i32) -> Vec<i32>
     {
         let sub_value = target - nums[i];
         if hash.contains_key(&sub_value){
-            return vec![nums[i], sub_value];
+            let value = hash[&sub_value];
+            return vec![i as i32, value];
         }
-        hash.insert(nums[i],1);
+        hash.insert(nums[i],i as i32);
     }
     vec![]
 
